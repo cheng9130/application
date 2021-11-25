@@ -3,7 +3,8 @@ from flask import *
 from firebase_admin import credentials
 from firebase_admin import db
 db_url = 'https://secuhigh-757bf-default-rtdb.firebaseio.com/'
-cred = credentials.Certificate(os.path.join('.','schg.json'))
+mykey = "C:\\Users\\artki\\OneDrive\\바탕 화면\\하늘고\\대회_프로젝트\\하늘방범대\\천재공학팀문안\\key.json"
+cred = credentials.Certificate(mykey)
 default_app = firebase_admin.initialize_app(cred, {'databaseURL':db_url})
 
 app = Flask(__name__)
@@ -15,10 +16,10 @@ row = int(row)
 @app.route('/', methods=['GET', 'POST'])
 def main():
          if row >3 :
-            return render_template('emergency.html')
+            return render_template('')
 
          else :
-             return render_template('normal.html')
+             return render_template('')
 
 
 
